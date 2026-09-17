@@ -188,7 +188,7 @@ clean.
 
 | Phase | Scope (§18) | Est. | Status |
 |---|---|---|---|
-| 0 | Foundations: scaffold, tokens, fonts, theme, i18n + `dir`, NavShell, API client skeleton, Zod types | ½ d | ☐ not started |
+| 0 | Foundations: scaffold, tokens, fonts, theme, i18n + `dir`, NavShell, API client skeleton, Zod types | ½ d | ☑ done — see [Phase 0 notes](#phase-0-notes) |
 | 1 | Identity + chat + plans, non-streaming: onboarding, Composer, Thread, ResponseRouter, PlanCard (read-only), AnswerCard, history replay, error cards | 2 d | ☐ not started |
 | 2 | Checklist becomes real: tick/rename/add/delete, mutation queue, optimistic toggle, Undo, ProgressMeter, PersistenceNotice, Plans library, Plan detail | 2 d | ☐ not started |
 | 3 | Places + location: PlacesCard, PlaceRow (all optional fields, `phone_source`, no-coords warning), LocationAskCard, capability gating, optional Leaflet | 2 d | ☐ not started |
@@ -199,6 +199,38 @@ clean.
 Phases 0–4 are a complete, shippable product. Voice (5) is the most expensive phase and needs
 `GEMINI_API_KEY` + `VOICE_ENABLED=true` on the backend — confirm with Nour whether it is in v1 before
 starting it.
+
+### Phase 0 notes
+
+Four things differ from the instructions above. Each was forced by what is actually installable
+today, not a preference:
+
+1. **Next 16.3.5, not 15.** `create-next-app@latest` installs 16; the spec was written when 15 was
+   current. Same framework and App Router, so §17 still holds. Consequences already handled:
+   `cookies()`/`params` are async-only, `next lint` and the `eslint` key in `next.config.ts` are
+   gone (lint is its own script), and `middleware` is renamed `proxy` — which we avoid entirely by
+   keeping the locale in a cookie. Next ships its own agent rules in `AGENTS.md`; read
+   `node_modules/next/dist/docs/` before using an API that looks different from Next 15.
+2. **Fonts are self-hosted**, in `app/fonts/` via `next/font/local`, not `next/font/google`. The
+   Google fetch runs at build time and timed out repeatedly here, which broke both `next dev` and
+   `next build` for reasons unrelated to the code. `scripts/fetch-fonts.py` regenerates the files.
+   Open Sans and both Noto families are variable fonts (one file each); Poppins is three statics.
+3. **The repo already existed** (cloned from GitHub), so `git init` in Step 0 was skipped.
+4. **`@types/node` is on ^22, not ^20** — vitest 5 requires it, and this machine runs Node 22.
+
+Spacing tokens: Tailwind's built-in steps 1–4 match §8.4 exactly, but 5–8 diverge (Tailwind 5 = 20px,
+§8.4 wants 24px). The spec scale is kept as `--space-1..8` and used as `gap-(--space-5)`; plain
+`gap-5` is Tailwind's scale and means something else. Prefer the explicit token form.
+
+Verified at 375 px in light and dark, English and Arabic: all six routes render, the theme and
+language toggles change `data-theme`/`lang`/`dir` with the value already correct in the first
+server-rendered byte, `/health` drives the Settings capability list, and the Voice tab renders
+disabled-with-a-reason when `voice_enabled` is false. `npm test` (30), `npm run typecheck`,
+`npm run lint` and `npm run build` are all clean.
+
+The real backend was not running for this (no `myvenv` in `../khalesni` on this machine), so the
+capability list was checked against a stub serving the documented §6.5 shape. **Re-check Settings
+against the live backend before starting Phase 1.**
 
 ---
 

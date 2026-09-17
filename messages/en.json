@@ -1,0 +1,183 @@
+{
+  "app": {
+    "name": "Khalesni",
+    "tagline": "Tell me the mess. I'll turn it into a checklist."
+  },
+  "nav": {
+    "chat": "Chat",
+    "plans": "Plans",
+    "voice": "Voice",
+    "you": "You",
+    "recent": "Recent plans",
+    "primary": "Primary"
+  },
+  "onboarding": {
+    "name": "What should I call you?",
+    "hint": "Letters, numbers, - and _",
+    "start": "Start"
+  },
+  "chat": {
+    "greeting": {
+      "morning": "Good morning, {name}. What's on your mind?",
+      "evening": "Good evening, {name}. What's on your mind?"
+    },
+    "placeholder": "Tell me what's on your mind…",
+    "send": "Send",
+    "stop": "Stop",
+    "new": "New chat",
+    "jumpLatest": "Jump to latest"
+  },
+  "chip": {
+    "planDay": "Plan my day",
+    "packTrip": "Pack for a trip",
+    "findCafe": "Find me a café",
+    "studyPlan": "Study schedule"
+  },
+  "stage": {
+    "thinking": "Working out what you need…",
+    "remembering": "Checking what you like…",
+    "searching": "Looking for places…",
+    "checking": "Verifying the details…",
+    "writing": "Writing your checklist…",
+    "slow": "Still working — map searches can be slow."
+  },
+  "plan": {
+    "tasks": "Tasks",
+    "readiness": {
+      "outing": "Before you go",
+      "general": "Bring / prepare"
+    },
+    "places": "Places",
+    "done": "{done}/{total} done",
+    "packed": "{done}/{total} packed",
+    "showMore": "Show {n} more",
+    "addTask": "Add a task",
+    "addItem": "Add an item",
+    "open": "Open plan",
+    "saved": "Saved · {time}",
+    "youAsked": "You asked",
+    "continue": "Continue this in chat",
+    "delete": "Delete plan",
+    "notSaved": {
+      "title": "Not saved",
+      "body": "Khalesni wrote this plan but couldn't store it. Ticking won't be remembered.",
+      "retry": "Try saving again"
+    }
+  },
+  "place": {
+    "openNow": "Open now",
+    "closed": "Closed",
+    "call": "Call",
+    "map": "Map",
+    "website": "Website",
+    "source": "Source",
+    "phoneSource": "Phone found on {domain} — may be outdated",
+    "notOnMap": "Not on the map — found on {domain}",
+    "widerArea": "Try a wider area"
+  },
+  "location": {
+    "ask": "Which area are you in?",
+    "use": "Use my location",
+    "type": "Type an area",
+    "skip": "Not now"
+  },
+  "realtime": {
+    "badge": "Real-time",
+    "sources": "Sources",
+    "checked": "Checked {time}",
+    "noSources": "No sources returned"
+  },
+  "plans": {
+    "title": "Your plans",
+    "empty": "No plans yet. Tell Khalesni what's on your mind and it'll build your first checklist.",
+    "startChat": "Start a chat",
+    "hideCompleted": "Hide completed",
+    "deleteConfirm": {
+      "title": "Delete this plan?",
+      "body": "\"{title}\" will be gone for good."
+    }
+  },
+  "voice": {
+    "start": "Start talking",
+    "sub": "Khalesni will listen and reply out loud.",
+    "connecting": "Connecting…",
+    "listening": "Listening…",
+    "speaking": "Khalesni is speaking",
+    "buildingPlan": "Building your plan…",
+    "mute": "Mute",
+    "end": "End",
+    "ended": "Session ended · {duration}",
+    "busy": "Voice is already open in another tab. Close it and try again.",
+    "off": "Voice mode isn't switched on for this server.",
+    "micDenied": "Microphone access is off. Enable it in your browser settings."
+  },
+  "error": {
+    "generate": "Khalesni couldn't finish that one. It happens with very long or unusual messages.",
+    "timeout": "That took too long. A shorter message usually works.",
+    "plansDown": "Your saved plans aren't reachable right now. You can still chat — new plans just won't be stored.",
+    "offline": "You're offline. Khalesni needs a connection to think.",
+    "retry": "Retry",
+    "edit": "Edit message",
+    "copyDetails": "Copy details"
+  },
+  "settings": {
+    "title": "You",
+    "identity": "Identity",
+    "handle": "Handle",
+    "handleNote": "A handle, not an account. Anyone using it sees the same plans.",
+    "switchHandle": "Switch handle",
+    "preferences": "Preferences",
+    "language": "Language",
+    "theme": "Theme",
+    "themeSystem": "System",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "defaultMood": "Default mood",
+    "defaultLocation": "Default location",
+    "useLocation": "Use my location",
+    "notSet": "Not set",
+    "capabilities": "What Khalesni can do right now",
+    "capability": {
+      "core": "Plans and chat",
+      "plans": "Saved plans",
+      "memory": "Memory of your preferences",
+      "places": "Place search",
+      "voice": "Voice mode"
+    },
+    "status": {
+      "working": "Working",
+      "unavailable": "Unavailable",
+      "off": "Off",
+      "checking": "Checking…",
+      "unreachable": "Can't reach the server"
+    },
+    "placesOff": "Khalesni can still plan, but it won't suggest specific venues.",
+    "voiceOff": "Voice mode isn't switched on for this server.",
+    "memoryOff": "Khalesni won't remember preferences yet.",
+    "plansOff": "New plans won't be stored, but chat still works.",
+    "model": "Model: {model} via {provider}",
+    "data": "Data",
+    "clearConversation": "Clear this conversation",
+    "deleteAllPlans": "Delete all my plans",
+    "version": "Khalesni v{version}",
+    "requestId": "Request ID {id}",
+    "noRequestId": "No requests yet"
+  },
+  "undo": {
+    "label": "Undo",
+    "restoredAtEnd": "Restored at the end of the list"
+  },
+  "common": {
+    "loading": "Loading…",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "close": "Close",
+    "copy": "Copy",
+    "copied": "Copied",
+    "skipToContent": "Skip to content"
+  },
+  "scaffold": {
+    "phase": "Arrives in Phase {n}.",
+    "shellReady": "The shell, tokens and API client are in place."
+  }
+}
