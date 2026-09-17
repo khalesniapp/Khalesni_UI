@@ -1,23 +1,18 @@
-import { getTranslations } from "next-intl/server";
+import { cookies } from "next/headers";
 
-import { PageHeader, PhasePlaceholder } from "@/components/shell/PageHeader";
+import { ChatScreen } from "@/components/chat/ChatScreen";
+import { DEFAULT_THEME, isTheme, THEME_COOKIE } from "@/lib/theme";
 
 /**
- * Home — Chat (UI_Plan.md §7.2). The Composer, Thread and ResponseRouter land
- * in Phase 1; Phase 0 only proves the route renders inside the shell.
+ * Home — Chat (UI_Plan.md §7.2).
+ *
+ * A thin server shell around one client screen. The theme is read here for the
+ * same reason app/layout.tsx reads it: the cookie is what the first paint used,
+ * so the header's toggle must be seeded from it rather than from the store.
  */
 export default async function ChatPage() {
-  const t = await getTranslations();
+  const themeCookie = (await cookies()).get(THEME_COOKIE)?.value;
+  const theme = isTheme(themeCookie) ? themeCookie : DEFAULT_THEME;
 
-  return (
-    <>
-      <PageHeader title={t("app.name")}>
-        <p className="text-body text-muted-foreground">{t("app.tagline")}</p>
-      </PageHeader>
-      <PhasePlaceholder
-        phase={t("scaffold.phase", { n: 1 })}
-        note={t("scaffold.shellReady")}
-      />
-    </>
-  );
+  return <ChatScreen theme={theme} />;
 }

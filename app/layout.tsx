@@ -5,6 +5,7 @@ import { getLocale, getMessages, getTranslations } from "next-intl/server";
 import localFont from "next/font/local";
 
 import { NavShell } from "@/components/shell/NavShell";
+import { Toaster } from "@/components/ui/Toaster";
 import { dirFor, type Locale } from "@/lib/locale";
 import { DEFAULT_THEME, isTheme, themeAttribute, THEME_COOKIE } from "@/lib/theme";
 import { Providers } from "./providers";
@@ -112,6 +113,8 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Providers>
             <NavShell>{children}</NavShell>
+            {/* One toast region for the whole app — §12.3 allows exactly one. */}
+            <Toaster />
           </Providers>
         </NextIntlClientProvider>
       </body>

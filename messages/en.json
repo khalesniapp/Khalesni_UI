@@ -14,7 +14,11 @@
   "onboarding": {
     "name": "What should I call you?",
     "hint": "Letters, numbers, - and _",
-    "start": "Start"
+    "start": "Start",
+    "savedAs": "Saved as {handle}",
+    "shared": "Anyone using this handle on this device sees the same plans.",
+    "invalid": "Letters, numbers, - and _ only.",
+    "required": "Pick a handle to continue."
   },
   "chat": {
     "greeting": {
@@ -25,7 +29,11 @@
     "send": "Send",
     "stop": "Stop",
     "new": "New chat",
-    "jumpLatest": "Jump to latest"
+    "jumpLatest": "Jump to latest",
+    "title": "Khalesni",
+    "newConfirm": "Start a new chat? This one will be cleared.",
+    "stopped": "Stopped.",
+    "retryLabel": "Retry"
   },
   "chip": {
     "planDay": "Plan my day",
@@ -39,7 +47,8 @@
     "searching": "Looking for places…",
     "checking": "Verifying the details…",
     "writing": "Writing your checklist…",
-    "slow": "Still working — map searches can be slow."
+    "slow": "Still working — map searches can be slow.",
+    "generic": "Working on it…"
   },
   "plan": {
     "tasks": "Tasks",
@@ -62,7 +71,27 @@
       "title": "Not saved",
       "body": "Khalesni wrote this plan but couldn't store it. Ticking won't be remembered.",
       "retry": "Try saving again"
-    }
+    },
+    "badge": "{type} plan",
+    "actions": "Plan actions",
+    "type": {
+      "trip": "Trip",
+      "outing": "Outing",
+      "study": "Study",
+      "day": "Day",
+      "general": "General"
+    },
+    "allGone": "Every task is gone. Add one to keep this plan alive.",
+    "rename": "Rename",
+    "renameItem": "Item name",
+    "deleteItem": "Delete",
+    "itemActions": "Actions for {name}",
+    "saveFailed": "Couldn't save that. Try again.",
+    "changed": "This plan changed — refreshed it for you.",
+    "itemDeleted": "Item deleted",
+    "copyAsText": "Copy as text",
+    "moodWas": "mood: {mood}",
+    "continueSeed": "About my plan “{title}” — "
   },
   "place": {
     "openNow": "Open now",
@@ -73,19 +102,26 @@
     "source": "Source",
     "phoneSource": "Phone found on {domain} — may be outdated",
     "notOnMap": "Not on the map — found on {domain}",
-    "widerArea": "Try a wider area"
+    "widerArea": "Try a wider area",
+    "mapFor": "Map for {name}",
+    "mapUnavailable": "The map couldn't load. The list above has everything.",
+    "searchOff": "Place search is off on this server, so Khalesni won't name specific venues."
   },
   "location": {
     "ask": "Which area are you in?",
     "use": "Use my location",
     "type": "Type an area",
-    "skip": "Not now"
+    "skip": "Not now",
+    "placeholder": "Area or city",
+    "denied": "Location is off. Type an area instead.",
+    "unavailable": "Couldn't get your location. Type an area instead."
   },
   "realtime": {
     "badge": "Real-time",
     "sources": "Sources",
     "checked": "Checked {time}",
-    "noSources": "No sources returned"
+    "noSources": "No sources returned",
+    "actions": "Answer actions"
   },
   "plans": {
     "title": "Your plans",
@@ -95,7 +131,15 @@
     "deleteConfirm": {
       "title": "Delete this plan?",
       "body": "\"{title}\" will be gone for good."
-    }
+    },
+    "search": "Search your plans",
+    "filterAll": "All",
+    "noMatches": "Nothing matches that.",
+    "clearFilter": "Clear filter",
+    "deleted": "Plan deleted",
+    "ceiling": "Showing your 100 most recent plans.",
+    "gone": "That plan is gone.",
+    "backToPlans": "Back to plans"
   },
   "voice": {
     "start": "Start talking",
@@ -109,7 +153,27 @@
     "ended": "Session ended · {duration}",
     "busy": "Voice is already open in another tab. Close it and try again.",
     "off": "Voice mode isn't switched on for this server.",
-    "micDenied": "Microphone access is off. Enable it in your browser settings."
+    "micDenied": "Microphone access is off. Enable it in your browser settings.",
+    "you": "You",
+    "assistant": "K",
+    "unmute": "Unmute",
+    "mutedLabel": "Muted",
+    "micWhy": "Khalesni needs your microphone to hear you. Nothing is recorded after you end the session.",
+    "micUnavailable": "No microphone is available on this device.",
+    "useChatInstead": "Use chat instead",
+    "noTranscript": "Say something — Khalesni is listening.",
+    "planSaved": "Plan saved.",
+    "plansCreated": "{count} plan created",
+    "startAgain": "Start again",
+    "backToChat": "Back to chat",
+    "badHandle": "Voice isn't available for this handle.",
+    "genericError": "Something went wrong on that turn.",
+    "tool": {
+      "create_plan": "Building your plan…",
+      "get_my_preferences": "Checking what you like…",
+      "working": "Working…"
+    },
+    "permission": "Waiting for microphone access…"
   },
   "error": {
     "generate": "Khalesni couldn't finish that one. It happens with very long or unusual messages.",
@@ -118,7 +182,8 @@
     "offline": "You're offline. Khalesni needs a connection to think.",
     "retry": "Retry",
     "edit": "Edit message",
-    "copyDetails": "Copy details"
+    "copyDetails": "Copy details",
+    "server": "Something broke on our side."
   },
   "settings": {
     "title": "You",
@@ -161,7 +226,8 @@
     "deleteAllPlans": "Delete all my plans",
     "version": "Khalesni v{version}",
     "requestId": "Request ID {id}",
-    "noRequestId": "No requests yet"
+    "noRequestId": "No requests yet",
+    "switchTheme": "Switch theme to {theme}"
   },
   "undo": {
     "label": "Undo",
@@ -174,10 +240,39 @@
     "close": "Close",
     "copy": "Copy",
     "copied": "Copied",
-    "skipToContent": "Skip to content"
+    "skipToContent": "Skip to content",
+    "showMore": "Show more",
+    "showLess": "Show less",
+    "messageActions": "Message actions",
+    "noReply": "No reply.",
+    "complete": "Complete",
+    "loadMore": "Load more",
+    "plansDown": "Your saved plans aren't reachable right now. You can still chat — new plans just won't be stored."
   },
   "scaffold": {
     "phase": "Arrives in Phase {n}.",
     "shellReady": "The shell, tokens and API client are in place."
+  },
+  "chipPrompt": {
+    "planDay": "I have energy but no plan today",
+    "packTrip": "I need to prepare for a trip",
+    "findCafe": "Find me a quiet cafe nearby",
+    "studyPlan": "I need a study schedule for this week"
+  },
+  "context": {
+    "mood": "Mood",
+    "location": "Location",
+    "open": "Add context",
+    "close": "Close context",
+    "clearMood": "Clear mood",
+    "clearLocation": "Clear location"
+  },
+  "mood": {
+    "neutral": "Neutral",
+    "tired": "Tired",
+    "energetic": "Energetic",
+    "stressed": "Stressed",
+    "focused": "Focused",
+    "excited": "Excited"
   }
 }

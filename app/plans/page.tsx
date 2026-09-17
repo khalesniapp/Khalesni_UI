@@ -1,18 +1,16 @@
 import { getTranslations } from "next-intl/server";
 
-import { PageHeader, PhasePlaceholder } from "@/components/shell/PageHeader";
+import { PageHeader } from "@/components/shell/PageHeader";
+import { PlansLibrary } from "@/components/plans/PlansLibrary";
 
-/** Plans library — §7.6. Filled in Phase 2. */
+/** Plans library — UI_Plan.md §7.6. */
 export default async function PlansPage() {
-  const t = await getTranslations();
+  const t = await getTranslations("plans");
 
   return (
     <>
-      <PageHeader title={t("plans.title")} />
-      <PhasePlaceholder
-        phase={t("scaffold.phase", { n: 2 })}
-        note={t("plans.empty")}
-      />
+      <PageHeader title={t("title")} />
+      <PlansLibrary />
     </>
   );
 }

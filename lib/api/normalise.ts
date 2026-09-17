@@ -96,3 +96,32 @@ export function fromPlanDocument(document: PlanDocument): Plan {
     model: document.model ?? null,
   };
 }
+
+/**
+ * Fold an updated `PlanDocument` back into the `GeneratePlanResponse` that is
+ * stored in the transcript.
+ *
+ * The thread keeps raw responses so the router can re-run on them, but item
+ * mutations answer with the flat document shape (trap 1). Rather than teach the
+ * thread about two shapes, the document is folded back into the response here
+ * and the message is replaced wholesale — which is also trap 2's rule: replace
+ * from the response, never splice.
+ */
+export function mergeDocumentIntoResponse(
+  response: GeneratePlanResponse,
+  document: PlanDocument,
+): GeneratePlanResponse {
+  return {
+    ...response,
+    plan_id: document.id,
+    // It came back from the database, so it is stored by definition.
+    persisted: true,
+    plan: {
+      title: document.title,
+      description: document.description,
+      tasks: document.tasks,
+      outing_readiness: document.outing_readiness,
+      places: document.places,
+    },
+  };
+}

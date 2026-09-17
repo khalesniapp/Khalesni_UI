@@ -266,3 +266,24 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* ============================================================================
+   Leaflet numbered pins — §7.4, only rendered when NEXT_PUBLIC_MAP=leaflet.
+   Leaflet's divIcon has no styling of its own, and the markup is built in
+   PlacesMap.tsx, so the rule lives here where the tokens are.
+   ========================================================================== */
+
+.khalesni-pin {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-caption);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  box-shadow: var(--shadow-2);
+}
